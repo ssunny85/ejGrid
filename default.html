@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link href="http://js.syncfusion.com/demos/web/content/ejthemes/ej.widgets.core.min.css" rel="stylesheet"/>
+<link href="http://js.syncfusion.com/demos/web/content/ejthemes/bootstrap-theme/ej.web.all.min.css" rel="stylesheet"/>
+<link href="http://js.syncfusion.com/demos/web/content/ejthemes/responsive-css/ej.responsive.css" rel="stylesheet"/>
+<link href="https://img.yellomarket.co.kr/resources/ifv-Framework/1.4/ifvDefault/css/ifvDefault.css" />
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="http://js.syncfusion.com/demos/web/scripts/jsrender.min.js"></script>
+<script src="https://img.yellomarket.co.kr/resources/ifv-Framework/1.4/ifvDefault/js/ifvDefault.js"></script>
+<script src="js/ej.web.all.min.js" type="text/javascript"></script>
+</head>
+<body>
+<h1>EJ Grid</h1>
+<div id="gridTest"></div>
+<script id="ifvGridOriginTemplete" type="text/ifvGrid-tmpl">
+	<div class="ifv_grid_templete">
+		{title}
+
+		<div class="filter_area">
+			<div class="left">
+				{searchBox}
+			</div>
+			<div class="right">
+				{rowsBox}
+			</div>
+		</div>
+
+		<div class="grid_con">
+			{grid}
+		</div>
+		<div class="page">
+			{page}
+			<div class="total_area">{total}</div>
+		<div>
+	</div>
+</script>
+
+<script src="js/ssunnyEjGrid.js"></script>
+<script>
+var ejGridOption = {
+    dataUrl:  'http://localhost:3000/users',
+    columns: [
+        {
+            field: 'id',
+            headerText: 'ID',
+            headerTextAlign: 'center',
+            customAttributes: {
+                index: 'p.pgm_no',
+                searchable: false,
+                title: '{{:id}}'
+            }
+        },
+        {
+            field: 'name',
+            headerText: '이름',
+            headerTextAlign: 'center',
+            customAttributes: {
+                index: 'p.pgm_nm',
+                title: '{{:name}}'
+            }
+        },
+        {
+            field: 'age',
+            headerText: '나이',
+            headerTextAlign: 'center',
+            customAttributes: {
+                index: 'cc.mark_name',
+                title: '{{:age}}'
+            }
+        },
+        {
+            field: 'birthday',
+            headerText: '생일',
+            headerTextAlign: 'center',
+            customAttributes: {
+                index: 'p.pgm_path',
+                title: '{{:birthday}}'
+            }
+        }
+    ],
+    requestGridData: {
+        rows: 10,
+        sord: "desc"
+    },
+    tempId : 'ifvGridOriginTemplete',
+    rowList: [10,25,50,100],
+    recordDoubleClick: function() {
+        alert('doubleClick'); //double click시 실행
+    },
+    recordClick: function(args) {
+        console.log(args);
+        alert('recordClick');
+    }
+};
+$("#gridTest").ssunnyEjGrid({ ejGridOption : ejGridOption });
+</script>
+</body>
+</html>
