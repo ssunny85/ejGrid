@@ -1,7 +1,7 @@
 {
   "name": "ejgrid",
   "version": "1.0.0",
-  "description": "",
+  "description": "* ejGrid test Repository",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssunny85/ejGrid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ssunny85/ejGrid/issues"
+  },
+  "homepage": "https://github.com/ssunny85/ejGrid#readme"
 }

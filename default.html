@@ -51,7 +51,7 @@ var ejGridOption = {
             headerText: 'ID',
             headerTextAlign: 'center',
             customAttributes: {
-                index: 'p.pgm_no',
+                index: 'id',
                 searchable: false,
                 title: '{{:id}}'
             }
@@ -61,7 +61,7 @@ var ejGridOption = {
             headerText: '이름',
             headerTextAlign: 'center',
             customAttributes: {
-                index: 'p.pgm_nm',
+                index: 'name',
                 title: '{{:name}}'
             }
         },
@@ -70,7 +70,7 @@ var ejGridOption = {
             headerText: '나이',
             headerTextAlign: 'center',
             customAttributes: {
-                index: 'cc.mark_name',
+                index: 'age',
                 title: '{{:age}}'
             }
         },
@@ -79,14 +79,15 @@ var ejGridOption = {
             headerText: '생일',
             headerTextAlign: 'center',
             customAttributes: {
-                index: 'p.pgm_path',
+                index: 'birthday',
                 title: '{{:birthday}}'
             }
         }
     ],
     requestGridData: {
         rows: 10,
-        sord: "desc"
+        sord: "desc",
+        index: "id"
     },
     tempId : 'ifvGridOriginTemplete',
     rowList: [10,25,50,100],
