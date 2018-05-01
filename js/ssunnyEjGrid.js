@@ -26,7 +26,6 @@
      * ejGrid 초기화
      */
     this.init = function () {
-
       /*
        * 기본 옵션 설정
        */
@@ -48,7 +47,7 @@
         emptyMsg: ifv.commonMessage.noData,
         total: ifv.commonMessage.total + ' : {total}' + ifv.commonMessage.gun,
         allowSorting: false,
-        //gridInit: true,
+        gridDataInit: true,
         dataBound: function (args) {
           var _thisId = this._id;
           $("#" + _thisId).off().on("click", ".e-headercell", function (args) {
@@ -69,9 +68,9 @@
       this.optionSetting();
       this.uiSetting();
       this.makeGrid();
-      this.setAjax();
       this.rowBoxInit();
       this.searchBoxInit();
+      if(this.ejGridOption.gridDataInit) this.setAjax();
     };
 
     /*
@@ -192,19 +191,7 @@
       if (this.ejGridOption.radio === true) {
         this.setRadio();
       }
-
-      if (this.ejGridOption.gridInit === true) {
-        this.setGridInit();
-      }
-
     };
-
-    /*
-     * grid init
-     */
-    this.setGridInit = function () {
-      this.opt.postData = {};
-    }
 
     /*
      * radio 셋팅
