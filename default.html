@@ -71,7 +71,8 @@ var ejGridOption = {
             headerTextAlign: 'center',
             customAttributes: {
                 index: 'age',
-                title: '{{:age}}'
+                title: '{{:age}}',
+                sortable: false
             }
         },
         {
@@ -91,6 +92,7 @@ var ejGridOption = {
     },
     tempId : 'ifvGridOriginTemplete',
     rowList: [10,25,50,100],
+    gridDataInit: false,
     recordDoubleClick: function() {
         alert('doubleClick'); //double click시 실행
     },
