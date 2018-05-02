@@ -15,7 +15,7 @@
             pager: null,
             data: null,
             gridId: null,
-            postData: null,
+            postData: null
             //keyName: null,
             //isRsizeTime: false,
             //isRowspan: false,
@@ -31,6 +31,7 @@
              */
             var _this = this;
             this.ejGridOption = {
+                title: '',
                 dataUrl: '',
                 textWrapSettings: {wrapMode: "both"},
                 commonWidth: 100,
@@ -75,6 +76,7 @@
             this.optionSetting();
             this.uiSetting();
             this.makeGrid();
+            this.titleInit();
             this.rowBoxInit();
             this.searchBoxInit();
             if (this.ejGridOption.gridDataInit) this.setAjax();
@@ -240,6 +242,17 @@
                 $radio.prop('checked', true);
             };
         };
+
+        /*
+		 *	title 초기화
+		 */
+        this.titleInit = function() {
+            if(this.ejGridOption.title != null && this.ejGridOption.title != ""){
+                this.opt.title.html(this.ejGridOption.title);
+            }else{
+                this.opt.title.remove();
+            }
+        }
 
         /*
          *	row 셀렉트 박스 초기화
